@@ -1,0 +1,45 @@
+def add_all(*args):
+  t = 0
+  for i in args:
+    n = int(i)
+    t+=n
+  print(t)
+def sub_all(*args):
+  n_list = [int(p) for p in args]
+  t = n_list[0]
+  for x in n_list[1:]:
+    t-=x 
+  print(t)
+def m1():
+  while True:
+    choice = input('enter y/n to continue or exit respectively: ').lower()
+    if choice == 'y':
+      return True
+    elif choice == 'n':
+      print('Thank you using calculator')
+      return False
+    else:
+      print('Invalid input, Try again')
+op_l ='+-'      
+while True:
+     op = None
+     user_input = input('Welcome, Please give input')
+     for s in user_input:
+         if s in op_l:
+            op = s
+            num_list=user_input.split(s)
+     if op == None:
+        print('Invalid input, enter 2 operand with + or -')
+        continue
+     if op == '+':
+        print('Addition')
+        add_all(*num_list)
+        num_list.clear()
+     if op == '-':
+        print('Subtraction')
+        sub_all(*num_list)
+        num_list.clear()
+     if not m1():
+        break
+
+
