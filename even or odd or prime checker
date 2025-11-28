@@ -1,0 +1,38 @@
+## even,prime,or odd
+def m2():
+  inp = input('enter y/n: ').lower()
+  if inp == 'y':
+    return True
+  elif inp=='n':
+    print('Thank you using calculator')
+    return False
+  else:
+      print('invalid input')
+
+
+def is_prime(n):
+  if n<=1:
+    return False
+  if n==2:
+    return True
+  if n%2 == 0:
+    return False
+  for i in range(3,int(n**0.5)+1,2):
+    if n%i==0:
+      return False
+  return True
+
+while True:
+    num = int(input('enter a number: '))
+    if num%2==0:
+      if is_prime(num):
+         print(f'{num}, is even and prime')
+      else:
+        print(f'{num}, is even')
+    else:
+      if is_prime(num):
+        print(f'{num}, is odd and prime')
+      else:
+        print(f'{num}, is odd')
+    if not m2():
+      break
